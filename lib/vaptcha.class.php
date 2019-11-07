@@ -9,7 +9,7 @@ class Vaptcha{
   // 二次验证地址
   private static $validata_url = 'http://0.vaptcha.com/verify';
   // offline_key地址
-  private static $offline_url = 'https://channel.vaptcha.com/config/';
+  private static $offline_url = 'https://channel2.vaptcha.com/config/';
 
   private static $offline_imgurl = 'https://offline.vaptcha.com/';
 
@@ -89,9 +89,7 @@ class Vaptcha{
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     $res = curl_exec($ch);
     curl_close($ch);
-    $data = str_replace('static(', '',  $res);
-    $data = str_replace(')', '', $data);
-    $data = json_decode($data, true);
+    $data = json_decode($res, true);
     return $data;
   }
 
@@ -148,8 +146,6 @@ class Vaptcha{
             "msg" => "0104",
             "token" => "",
             "v" => $v,
-            // "imgs" => $imgs,
-            // "md5" => $url
         )).')';
     }
   }

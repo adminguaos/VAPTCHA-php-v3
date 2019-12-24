@@ -88,7 +88,7 @@
         // lang: 'zh-TW',
         container: '#vaptchaContainer', // 嵌入式、点击式必填
         scene: 1, //不填默认为0
-        offline_server: './vaptcha.php', //必填
+        offline_server: '/vaptcha.php', //必填
         //mode: 'offline' // 测试离线模式时使用
       }).then(function (obj) {
         // obj.listen('pass', function () {
